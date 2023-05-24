@@ -1,11 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { ImageBackground, ActivityIndicator, Dimensions, Button, StyleSheet, Text, TextInput, View, SafeAreaView, Platform, TouchableOpacity } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { ImageBackground, ActivityIndicator, Dimensions, Button, StyleSheet, Text, TextInput, View, SafeAreaView, Platform, TouchableOpacity } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import defaultBackground from "../imageBackgrounds/default.jpg";
 import { useSelector, useDispatch } from "react-redux";
 import { setLocations, createLocation, deleteLocation, login, logout } from "../redux/actions";
-import * as SecureStore from 'expo-secure-store';
+import * as SecureStore from "expo-secure-store";
 
 export default function Home({ navigation }) {
   const [email, setEmail] = React.useState("");
@@ -21,9 +21,9 @@ export default function Home({ navigation }) {
     setIsLoading(true);
 
     //Backend request to validate user email and password
-    const response = await fetch('https://weathernowweb-384801.ue.r.appspot.com/user/login', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+    const response = await fetch("https://weathernowweb-384801.ue.r.appspot.com/user/login", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify({ email, password })
     });
 
@@ -59,7 +59,7 @@ export default function Home({ navigation }) {
       <ImageBackground 
         source={backgroundImage}
         style={styles.backgroundImage}
-        resizeMode='cover'
+        resizeMode="cover"
       >
         {!isLoading ?
           <View style={styles.mainWrapper}>
@@ -84,8 +84,8 @@ export default function Home({ navigation }) {
             </TouchableOpacity>
           </View> 
           :
-          <View style={{alignItems: 'center', marginTop: 'auto', marginBottom: 'auto'}}>
-            <Text style={{fontWeight: 'bold', fontSize: 30}}>Attempting login...</Text>
+          <View style={{alignItems: "center", marginTop: "auto", marginBottom: "auto"}}>
+            <Text style={{fontWeight: "bold", fontSize: 30}}>Attempting login...</Text>
             <View>
               <ActivityIndicator size="large" />
             </View>
@@ -99,52 +99,52 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   loadingContainer: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   mainWrapper: {
-    marginTop: '30%',
+    marginTop: "30%",
   },
   input: {
-    color: 'white',
-    borderColor: 'white',
-    backgroundColor: 'black',
+    color: "white",
+    borderColor: "white",
+    backgroundColor: "black",
     height: 40,
     margin: 12,
     borderWidth: 1,
     padding: 10,
   },
   inputLabel: {
-    color: 'white',
-    textAlign: 'center',
+    color: "white",
+    textAlign: "center",
     fontSize: 20,
     textShadowColor: "black",
     textShadowOffset: {width: 2, height: 2},
     textShadowRadius: 3
   },
   error: {
-    textAlign: 'center',
-    color: 'red',
+    textAlign: "center",
+    color: "red",
     fontSize: 30,
     marginBottom: 40
   },
   loginButton: {
-    marginTop: '20%',
-    backgroundColor: 'black',
-    padding: '5%',
-    borderColor: 'white',
+    marginTop: "20%",
+    backgroundColor: "black",
+    padding: "5%",
+    borderColor: "white",
     borderWidth: 5,
     borderRadius: 20,
   },
   loginButtonText: {
     fontSize: 30,
-    color: 'white',
-    textAlign: 'center'
+    color: "white",
+    textAlign: "center"
   },
   backgroundImage: {
     flex: 1,

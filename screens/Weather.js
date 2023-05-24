@@ -1,8 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { ActivityIndicator, Dimensions, TouchableOpacity, Button, StyleSheet, Text, View, SafeAreaView, Platform, ImageBackground } from 'react-native';
-import { BlurView } from 'expo-blur';
+import { ActivityIndicator, Dimensions, TouchableOpacity, Button, StyleSheet, Text, View, SafeAreaView, Platform, ImageBackground } from "react-native";
+import { BlurView } from "expo-blur";
 import { useSelector, useDispatch } from "react-redux";
 import { setLocations, createLocation, deleteLocation, login, logout } from "../redux/actions";
 
@@ -130,7 +130,7 @@ export default function Weather({ navigation }) {
       <ImageBackground
         source={imgBackground}
         style={{flex: 1}}
-        resizeMode='cover'
+        resizeMode="cover"
       >
 
         {currentCity &&
@@ -179,12 +179,12 @@ export default function Weather({ navigation }) {
         }
 
         {(dropdownMenuOpen && session.locations.length > 1) && 
-          <BlurView intensity={Platform.OS === 'android' ? 80 : 20} tint="dark" style={styles.blurContainer}>
+          <BlurView intensity={Platform.OS === "android" ? 80 : 20} tint="dark" style={styles.blurContainer}>
             <TouchableOpacity style={{flex: 1}} activeOpacity={1} onPress={() => setDropdownMenuOpen(false)}>
               <View style={styles.dropDownMenuContainer}>
                 {locationSelection.map((location) => (
                   <TouchableOpacity onPress={() => selectCity(location)}>
-                    <View style={styles.dropDownOption} key={location.latCoords + ',' + location.longCoords}>
+                    <View style={styles.dropDownOption} key={location.latCoords + "," + location.longCoords}>
                       <View>
                         <Text style={styles.selectLocationText}>
                           {location.city}, {location.state && location.state} {location.country}
@@ -199,12 +199,12 @@ export default function Weather({ navigation }) {
                   </TouchableOpacity>
                 ))}
                 {session.locations.length > 4 ?
-                  <View style={{alignItems: 'center', marginBottom: '5%'}}>
-                    <Text style={{color: 'red', fontStyle: 'italic'}}> Max limit of 5 cities has been met</Text>
+                  <View style={{alignItems: "center", marginBottom: "5%"}}>
+                    <Text style={{color: "red", fontStyle: "italic"}}> Max limit of 5 cities has been met</Text>
                   </View>
                   :
                   <TouchableOpacity onPress={() => navigateToSearch()} style={styles.searchButtonText}>
-                    <Text style={{color: 'white', fontWeight: 'bold',}}>Search</Text>
+                    <Text style={{color: "white", fontWeight: "bold",}}>Search</Text>
                   </TouchableOpacity>
                 }
               </View>
@@ -213,7 +213,7 @@ export default function Weather({ navigation }) {
         }
 
         {weatherAlertPopup && 
-          <BlurView intensity={Platform.OS === 'android' ? 80 : 20} tint="dark" style={styles.blurContainer}>
+          <BlurView intensity={Platform.OS === "android" ? 80 : 20} tint="dark" style={styles.blurContainer}>
             <TouchableOpacity style={{flex: 1}} activeOpacity={1} onPress={() => setWeatherAlertPopup("")}>
               <View style={[styles.dropDownMenuContainer, styles.weatherAlertContainer]}>
                 <Text style={styles.weatherAlertText}>{weatherAlertPopup.event}</Text>
@@ -238,33 +238,33 @@ const styles = StyleSheet.create({
   dropDownOption: {
     margin: "5%",
     padding: "5%",
-    backgroundColor: 'lightgrey',
-    flexDirection: 'row',
+    backgroundColor: "lightgrey",
+    flexDirection: "row",
     borderRadius: 40,
   },
   changeCityButton: {
-    backgroundColor: 'black',
-    padding: Platform.OS === "android" ? '1%' : '5%',
-    borderColor: 'white',
+    backgroundColor: "black",
+    padding: Platform.OS === "android" ? "1%" : "5%",
+    borderColor: "white",
     borderWidth: 5,
     borderRadius: 20,
     opacity: 0.80,
   },
   changeCityButtonText: {
     fontSize: 30,
-    color: 'white',
-    textAlign: 'center',
+    color: "white",
+    textAlign: "center",
   },
   changeCityButtonContainer: {
-    position: 'absolute', 
-    bottom: Platform.OS === "android" ? '2%' : '10%',
+    position: "absolute", 
+    bottom: Platform.OS === "android" ? "2%" : "10%",
     left: 0,
     right: 0,
   },
   blurContainer: {
     padding: 20,
-    justifyContent: 'center',
-    position: 'absolute',
+    justifyContent: "center",
+    position: "absolute",
     left: 0,
     top: 0,
     bottom: 0,
@@ -276,52 +276,52 @@ const styles = StyleSheet.create({
     marginBottom: "auto",
     marginLeft: "auto",
     marginRight: "auto",
-    width: '90%',
-    borderColor: 'white',
+    width: "90%",
+    borderColor: "white",
     borderWidth: 5,
     borderRadius: 20,
     opacity: 0.8
   },
   changeLocationText: {
-    color: 'black',
-    fontWeight: 'bold',
-    width: '80%',
+    color: "black",
+    fontWeight: "bold",
+    width: "80%",
   },
   deleteLocationButton: {
-    marginLeft: 'auto', 
-    backgroundColor: 'red', 
+    marginLeft: "auto", 
+    backgroundColor: "red", 
     borderRadius: 5, 
-    justifyContent: 'center', 
-    padding: '2%'
+    justifyContent: "center", 
+    padding: "2%"
   },
   searchButtonText: {
-    backgroundColor: 'green', 
-    marginLeft: 'auto', marginRight: 'auto', 
-    marginTop: '10%', 
-    marginBottom: '10%', 
-    padding: '5%', 
+    backgroundColor: "green", 
+    marginLeft: "auto", marginRight: "auto", 
+    marginTop: "10%", 
+    marginBottom: "10%", 
+    padding: "5%", 
     borderRadius: 10, 
-    borderColor: 'white', 
+    borderColor: "white", 
     borderWidth: 3
   },
   weatherAlertContainer: {
-    alignItems: 'center',
-    padding: '8%'
+    alignItems: "center",
+    padding: "8%"
   },
   weatherAlertText: {
-    color: 'white',
+    color: "white",
     fontSize: 15,
-    margin: '5%'
+    margin: "5%"
   },
   loadingContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   noLocationsText: {
     fontSize: 30,
-    textAlign: 'center',
-    color: 'red'
+    textAlign: "center",
+    color: "red"
   }
 });

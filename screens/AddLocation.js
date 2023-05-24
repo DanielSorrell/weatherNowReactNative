@@ -1,8 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import RadioButtonRN from 'radio-buttons-react-native';
-import { Button, StyleSheet, Text, Keyboard, ActivityIndicator, TextInput, View, SafeAreaView, Platform, Switch, ImageBackground, TouchableOpacity, ScrollView } from 'react-native';
-import SearchResult from '../components/SearchResult.js';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import RadioButtonRN from "radio-buttons-react-native";
+import { Button, StyleSheet, Text, Keyboard, ActivityIndicator, TextInput, View, SafeAreaView, Platform, Switch, ImageBackground, TouchableOpacity, ScrollView } from "react-native";
+import SearchResult from "../components/SearchResult.js";
 import defaultBackground from "../imageBackgrounds/default.jpg";
 import { useSelector, useDispatch } from "react-redux";
 import { setLocations, createLocation, deleteLocation, login, logout } from "../redux/actions";
@@ -180,7 +180,7 @@ export default function AddLocation({ navigation }) {
     }
 
     /**
-     * Adds selected location to user's list of locations and redirects user to the weather page
+     * Adds selected location to user"s list of locations and redirects user to the weather page
      * to view weather data for newly selected location.
      * @param {object} e - user input object 
      */
@@ -207,13 +207,13 @@ export default function AddLocation({ navigation }) {
             <ImageBackground 
                 source={backgroundImage}
                 style={styles.backgroundImage}
-                resizeMode='cover'
+                resizeMode="cover"
             >
                 <View style={styles.changeSearchContainer}>
                     <View><Text style={styles.switchLabel} onPress={() => setSwitchEnabled(false)}>City</Text></View>
                     <Switch
-                        trackColor={{false: '#767577', true: '#81b0ff'}}
-                        thumbColor={switchEnabled ? '#f5dd4b' : '#f4f3f4'}
+                        trackColor={{false: "#767577", true: "#81b0ff"}}
+                        thumbColor={switchEnabled ? "#f5dd4b" : "#f4f3f4"}
                         ios_backgroundColor="#3e3e3e"
                         onValueChange={setSwitchEnabled}
                         value={switchEnabled}
@@ -277,7 +277,7 @@ export default function AddLocation({ navigation }) {
                         <View>
                             {searchResults && 
                                 <View>
-                                    <View style={selectedCity && Platform.OS === 'android' ? styles.shrunkenSearchResultsContainer : styles.searchResultsContainer}>
+                                    <View style={selectedCity && Platform.OS === "android" ? styles.shrunkenSearchResultsContainer : styles.searchResultsContainer}>
                                         {searchResults}
                                     </View>
                                     {selectedCity && 
@@ -302,29 +302,29 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexShrink: 1,
-        flexBasis: 'auto',
-        backgroundColor: '#fff',
+        flexBasis: "auto",
+        backgroundColor: "#fff",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     },
     loadingContainer: {
-        alignItems: 'center', 
-        marginTop: 'auto', 
-        marginBottom: 'auto'
+        alignItems: "center", 
+        marginTop: "auto", 
+        marginBottom: "auto"
     },
     changeSearchContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-evenly'
+        flexDirection: "row",
+        justifyContent: "space-evenly"
     },
     searchResultsContainer: {
-        backgroundColor: 'white',
+        backgroundColor: "white",
         opacity: 0.8,
     },
     shrunkenSearchResultsContainer: {
-        backgroundColor: 'white',
+        backgroundColor: "white",
         opacity: 0.8,
-        borderColor: 'black',
+        borderColor: "black",
         borderWidth: 3,
-        height: '70%',
+        height: "70%",
     },
     column: {
         flexGrow: 1,
@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
     },
 
     switchLabel: {
-        color: 'white',
+        color: "white",
         fontSize: 20
     },
     inputWrapper: {
@@ -340,18 +340,18 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     input: {
-        color: 'white',
-        borderColor: 'white',
+        color: "white",
+        borderColor: "white",
         borderWidth: 1,
-        backgroundColor: 'black',
-        margin: Platform.OS === 'android' ? 5 : 12,
+        backgroundColor: "black",
+        margin: Platform.OS === "android" ? 5 : 12,
         height: 40,
         padding: 10,
         width: "80%",
     },
     inputLabel: {
-        color: 'white',
-        textAlign: 'center',
+        color: "white",
+        textAlign: "center",
         fontSize: 20,
         textShadowColor: "black",
         textShadowOffset: {width: 2, height: 2},
@@ -361,30 +361,30 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     dispatchButton: {
-        backgroundColor: 'black',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        width: '70%',
-        padding: '2%',
-        borderColor: 'white',
+        backgroundColor: "black",
+        marginLeft: "auto",
+        marginRight: "auto",
+        width: "70%",
+        padding: "2%",
+        borderColor: "white",
         borderWidth: 5,
         borderRadius: 20,
 
     },
     dispatchButtonText: {
         fontSize: 20,
-        color: 'white',
-        textAlign: 'center'
+        color: "white",
+        textAlign: "center"
     },
     topMargin: {
-        marginTop: '4%'
+        marginTop: "4%"
     },
     loadingText: {
         color: "white",
         textShadowColor: "black",
         textShadowOffset: {width: 2, height: 2},
         textShadowRadius: 3,
-        fontWeight: 'bold', 
+        fontWeight: "bold", 
         fontSize: 30
     },
 });

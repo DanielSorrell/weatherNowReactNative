@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, Image, View, SafeAreaView, Platform, ScrollView, TouchableOpacity } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, Image, View, SafeAreaView, Platform, ScrollView, TouchableOpacity } from "react-native";
 
 export default function DailyWeather({ dayData }) {
 
@@ -33,7 +33,7 @@ export default function DailyWeather({ dayData }) {
         options.timeZone = "UTC";
         options.timeZoneName = "short";
         const time = dateObj.toLocaleDateString("en-US", options);
-        const dayOfWeek = time.substring(0, time.indexOf(','));
+        const dayOfWeek = time.substring(0, time.indexOf(","));
         return dayOfWeek;
     }
 
@@ -182,18 +182,18 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     rowDisplayContainer: {
-        flexDirection: 'row',
+        flexDirection: "row",
         flex: 0,
     },
     expandedHeader: {
-        flexDirection: 'column',
+        flexDirection: "column",
         flex: 0,
     },
     precipitationContainer: {
-        flexDirection: 'row',
+        flexDirection: "row",
     },
     mainDailyWeatherInfoContainer: {
-        flexDirection: 'row',
+        flexDirection: "row",
         flex: 1
     },
     columnContainer: {

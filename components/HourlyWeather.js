@@ -1,8 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-//import { Dimensions, Button, StyleSheet, Text, View, SafeAreaView, StatusBar, Platform } from 'react-native';
-import { Dimensions, Button, StyleSheet, Text, Image, View, SafeAreaView, Platform, ScrollView } from 'react-native';
-//import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+//import { Dimensions, Button, StyleSheet, Text, View, SafeAreaView, StatusBar, Platform } from "react-native";
+import { Dimensions, Button, StyleSheet, Text, Image, View, SafeAreaView, Platform, ScrollView } from "react-native";
+//import { useDimensions, useDeviceOrientation } from "@react-native-community/hooks";
 //import Location from "../components/Location.js";
 
 
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     icon: {
         marginLeft: "auto",
         marginRight: "auto",
-        shadowColor: 'black',
+        shadowColor: "black",
         shadowOffset: {width: 2, height: 2},
         shadowOpacity: 0.8,
         shadowRadius: 3

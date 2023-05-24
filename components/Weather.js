@@ -1,10 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { ActivityIndicator, Dimensions, Button, StyleSheet, Text, Image, View, SafeAreaView, Platform, ScrollView, TouchableOpacity } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { ActivityIndicator, Dimensions, Button, StyleSheet, Text, Image, View, SafeAreaView, Platform, ScrollView, TouchableOpacity } from "react-native";
 
 import DailyWeather from "./DailyWeather.js";
-import HourlyWeather from './HourlyWeather.js';
-import { BlurView } from 'expo-blur';
+import HourlyWeather from "./HourlyWeather.js";
+import { BlurView } from "expo-blur";
 
 export default function Weather({ navigation, location, getImageBackground, setWeatherAlertPopup }) {
 
@@ -77,7 +77,7 @@ export default function Weather({ navigation, location, getImageBackground, setW
         options.timeZone = "UTC";
         options.timeZoneName = "short";
         const time = dateObj.toLocaleDateString("en-US", options);
-        const dayOfWeek = time.substring(0, time.indexOf(','));
+        const dayOfWeek = time.substring(0, time.indexOf(","));
         return dayOfWeek;
     }
 
@@ -126,7 +126,7 @@ export default function Weather({ navigation, location, getImageBackground, setW
                     {weatherData && 
                         <View>
                             <View>
-                                <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+                                <View style={{flexDirection: "row", justifyContent: "space-around"}}>
                                     <Text style={[styles.textWithShadow, styles.leftAlign, styles.header]}>{location.city}</Text>
                                     <Text style={[styles.textWithShadow, styles.rightAlign, styles.smallHeader]}>{location.state}, {location.country}</Text>
                                 </View>
@@ -197,23 +197,23 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 40,
-        fontStyle: 'italic',
+        fontStyle: "italic",
     },
     smallHeader: {
         fontSize: 25,
-        fontStyle: 'italic',
-        marginTop: 'auto',
-        marginBottom: 'auto',
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        fontStyle: "italic",
+        marginTop: "auto",
+        marginBottom: "auto",
+        marginLeft: "auto",
+        marginRight: "auto",
     },
     leftAlign: {
         textAlign: "center",
-        width: '45%'
+        width: "45%"
     },
     rightAlign: {
         textAlign: "center",
-        width: '55%'
+        width: "55%"
     },
     subHeader: {
         fontSize: 20,
@@ -224,8 +224,8 @@ const styles = StyleSheet.create({
     },
      loadingContainer: {
         flexGrow: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: "center",
+        justifyContent: "center",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     },
     loadingText: {
@@ -233,19 +233,19 @@ const styles = StyleSheet.create({
         textShadowColor: "black",
         textShadowOffset: {width: 2, height: 2},
         textShadowRadius: 3,
-        fontWeight: 'bold', 
+        fontWeight: "bold", 
         fontSize: 30
     },
     mainContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: "center",
+        justifyContent: "center",
     },
     currentWeatherColumn: {
         marginLeft: "auto",
         marginRight: "auto",
     },
     rowDisplayContainer: {
-        flexDirection: 'row',
+        flexDirection: "row",
         justifyContent: "center",
         flex: 0,
     },
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
     dailyWeatherParentContainer: {
         borderBottomWidth: 3,
         borderColor: "white",
-        height: Platform.OS === 'android' ? 280 : 280,
+        height: Platform.OS === "android" ? 280 : 280,
     },
     textWithShadow: {
         color: "white",
@@ -293,16 +293,16 @@ const styles = StyleSheet.create({
         marginBottom: "auto",
         marginLeft: "auto",
         marginRight: "auto",
-        width: '90%',
-        borderColor: 'white',
+        width: "90%",
+        borderColor: "white",
         borderWidth: 5,
         borderRadius: 20,
         opacity: 0.8
     },
     blurContainer: {
         padding: 20,
-        justifyContent: 'center',
-        position: 'absolute',
+        justifyContent: "center",
+        position: "absolute",
         left: 0,
         top: 0,
         bottom: 0,

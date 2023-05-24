@@ -1,8 +1,8 @@
-export const SET_LOCATIONS = 'SET_LOCATIONS';
-export const CREATE_LOCATION = 'CREATE_LOCATION';
-export const DELETE_LOCATION = 'DELETE_LOCATION';
-export const LOGIN = 'LOGIN';
-export const LOGOUT = 'LOGOUT';
+export const SET_LOCATIONS = "SET_LOCATIONS";
+export const CREATE_LOCATION = "CREATE_LOCATION";
+export const DELETE_LOCATION = "DELETE_LOCATION";
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
 
 export const setLocations = savedLocations => dispatch => {
     dispatch({

@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { SET_LOCATIONS, CREATE_LOCATION, DELETE_LOCATION, LOGIN, LOGOUT } from "./actions";
-import * as SecureStore from 'expo-secure-store';
+import * as SecureStore from "expo-secure-store";
 
 /**
  * Checks local secure storage for a user json web token and returns one if found. 
  * @returns {String} token - String of user json web token
  */
 const getToken = async () => {
-    const token = await SecureStore.getItemAsync('userToken');
+    const token = await SecureStore.getItemAsync("userToken");
     return token;
 }
 
 /**
- * Takes a user email and location and adds location to list of locations in user's database account.
+ * Takes a user email and location and adds location to list of locations in user"s database account.
  * @param {String} user - user email
  * @param {Object} location - object containing data for a location
  */
@@ -48,7 +48,7 @@ const addLocationToDB = async (user, location) => {
 }
 
 /**
- * Takes a user email and location and deletes location from list of locations in user's database account.
+ * Takes a user email and location and deletes location from list of locations in user"s database account.
  * @param {String} user - user email
  * @param {Object} location - object containing data for a location
  */
@@ -80,7 +80,7 @@ const deleteLocationFromDB = async (user, location) => {
 }
 
 /**
- * Sets user's list of locations to local async storage. 
+ * Sets user"s list of locations to local async storage. 
  * @param {Array} locations - array of user locations
  */
 const setLocations = async (locations) => {

@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { Dimensions, Button, StyleSheet, Text, View, SafeAreaView, Platform } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Dimensions, Button, StyleSheet, Text, View, SafeAreaView, Platform } from "react-native";
 
 export default function SearchResult({ result, setSelectedCity }) {
   return (
@@ -22,9 +22,9 @@ export default function SearchResult({ result, setSelectedCity }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });

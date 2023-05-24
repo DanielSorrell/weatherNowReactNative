@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { TouchableOpacity, ImageBackground, ActivityIndicator, Dimensions, Button, StyleSheet, Text, TextInput, View, SafeAreaView, Platform } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { TouchableOpacity, ImageBackground, ActivityIndicator, Dimensions, Button, StyleSheet, Text, TextInput, View, SafeAreaView, Platform } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import defaultBackground from "../imageBackgrounds/default.jpg";
@@ -23,10 +23,10 @@ export default function Home({ navigation }) {
     setError(null);
 
     //Backend request to validate user email and password
-    const response = await fetch('https://weathernowweb-384801.ue.r.appspot.com/user/register', {
-      method: 'POST',
+    const response = await fetch("https://weathernowweb-384801.ue.r.appspot.com/user/register", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
         //"Access-Control-Allow-Origin": "*", 
         //"Access-Control-Allow-Credentials" : true
       },
@@ -59,7 +59,7 @@ export default function Home({ navigation }) {
       <ImageBackground 
         source={backgroundImage}
         style={styles.backgroundImage}
-        resizeMode='cover'
+        resizeMode="cover"
       >
         {!isLoading ?
           <View style={styles.mainWrapper}>
@@ -84,8 +84,8 @@ export default function Home({ navigation }) {
             </TouchableOpacity>
           </View>
           :
-          <View style={{alignItems: 'center', marginTop: 'auto', marginBottom: 'auto'}}>
-            <Text style={{fontWeight: 'bold', fontSize: 30}}>Creating account...</Text>
+          <View style={{alignItems: "center", marginTop: "auto", marginBottom: "auto"}}>
+            <Text style={{fontWeight: "bold", fontSize: 30}}>Creating account...</Text>
             <View>
               <ActivityIndicator size="large" />
             </View>
@@ -99,47 +99,47 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   mainWrapper: {
-    marginTop: '30%',
+    marginTop: "30%",
   },
   input: {
-    color: 'white',
-    borderColor: 'white',
-    backgroundColor: 'black',
+    color: "white",
+    borderColor: "white",
+    backgroundColor: "black",
     height: 40,
     margin: 12,
     borderWidth: 1,
     padding: 10,
   },
   inputLabel: {
-    color: 'white',
-    textAlign: 'center',
+    color: "white",
+    textAlign: "center",
     fontSize: 20,
     textShadowColor: "black",
     textShadowOffset: {width: 2, height: 2},
     textShadowRadius: 3
   },
   error: {
-    textAlign: 'center',
-    color: 'red',
+    textAlign: "center",
+    color: "red",
     fontSize: 30,
     marginBottom: 40
   },
   registerButton: {
-    marginTop: '20%',
-    backgroundColor: 'black',
-    padding: '5%',
-    borderColor: 'white',
+    marginTop: "20%",
+    backgroundColor: "black",
+    padding: "5%",
+    borderColor: "white",
     borderWidth: 5,
     borderRadius: 20,
   },
   registerButtonText: {
     fontSize: 30,
-    color: 'white',
-    textAlign: 'center'
+    color: "white",
+    textAlign: "center"
   },
   backgroundImage: {
     flex: 1,

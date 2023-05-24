@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import { Dimensions, Button, StyleSheet, Text, View, SafeAreaView, Platform, TouchableOpacity, ImageBackground } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Dimensions, Button, StyleSheet, Text, View, SafeAreaView, Platform, TouchableOpacity, ImageBackground } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { setLocations, createLocation, deleteLocation, login, logout } from "../redux/actions";
 import defaultBackground from "../imageBackgrounds/default.jpg";
@@ -15,7 +15,7 @@ export default function Home({ navigation }) {
       <ImageBackground 
         source={backgroundImage}
         style={styles.backgroundImage}
-        resizeMode='cover'
+        resizeMode="cover"
       >
 
       <Text style={styles.header}>Weather Now</Text>
@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
             <Text style={styles.userWelcome}>{session.user}!</Text>
             <TouchableOpacity 
               style={styles.navLink}
-              onPress={() => session.locations ? navigation.navigate('Weather') : navigation.navigate('Add location')}>
+              onPress={() => session.locations ? navigation.navigate("Weather") : navigation.navigate("Add location")}>
               <Text style={styles.navLinkText}>Weather</Text>
             </TouchableOpacity>
             <TouchableOpacity 
@@ -38,17 +38,17 @@ export default function Home({ navigation }) {
           <View style={styles.navContainer}>
             <TouchableOpacity 
               style={styles.navLink}
-              onPress={() => session.locations ? navigation.navigate('Weather') : navigation.navigate('Add location')}>
+              onPress={() => session.locations ? navigation.navigate("Weather") : navigation.navigate("Add location")}>
               <Text style={styles.navLinkText}>Continue as guest</Text>
             </TouchableOpacity>
             <TouchableOpacity 
               style={styles.navLink}
-              onPress={() => navigation.navigate('Login')}>
+              onPress={() => navigation.navigate("Login")}>
               <Text style={styles.navLinkText}>Login</Text>
             </TouchableOpacity>
             <TouchableOpacity 
               style={styles.navLink}
-              onPress={() => navigation.navigate('Create account')}>
+              onPress={() => navigation.navigate("Create account")}>
               <Text style={styles.navLinkText}>Create account</Text>
             </TouchableOpacity>
           </View>
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     marginBottom: "10%",
     marginTop: "10%",
-    textAlign: 'center',
+    textAlign: "center",
     color: "white",
     textShadowColor: "black",
     textShadowOffset: {width: 2, height: 2},
@@ -74,34 +74,34 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   navContainer: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   navLink: {
-    backgroundColor: 'black',
-    padding: '8%',
-    margin: '10%',
-    borderColor: 'white',
+    backgroundColor: "black",
+    padding: "8%",
+    margin: "10%",
+    borderColor: "white",
     borderWidth: 5,
     borderRadius: 20,
     opacity: 0.8
   },
   navLinkText: {
     fontSize: 30,
-    color: 'white'
+    color: "white"
   },
   backgroundImage: {
     flex: 1,
   },
   userWelcome: {
     fontSize: 25,
-    textAlign: 'center',
-    marginBottom: '10%',
+    textAlign: "center",
+    marginBottom: "10%",
     color: "white",
     textShadowColor: "black",
     textShadowOffset: {width: 2, height: 2},
