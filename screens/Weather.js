@@ -185,7 +185,7 @@ export default function Weather({ navigation }) {
                 {locationSelection.map((location) => (
                   <TouchableOpacity onPress={() => selectCity(location)}>
                     <View style={styles.dropDownOption} key={location.latCoords + "," + location.longCoords}>
-                      <View>
+                      <View style={{justifyContent: 'center'}}>
                         <Text style={styles.selectLocationText}>
                           {location.city}, {location.state && location.state} {location.country}
                         </Text>

@@ -13,7 +13,7 @@ export default function Home({ navigation }) {
     <SafeAreaView style={{flex: 1}}>
       
       <ImageBackground 
-        source={backgroundImage}
+        source={defaultBackground}
         style={styles.backgroundImage}
         resizeMode="cover"
       >

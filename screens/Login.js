@@ -57,7 +57,7 @@ export default function Home({ navigation }) {
   return (
     <SafeAreaView style={isLoading ? styles.container : styles.loadingContainer}>
       <ImageBackground 
-        source={backgroundImage}
+        source={defaultBackground}
         style={styles.backgroundImage}
         resizeMode="cover"
       >

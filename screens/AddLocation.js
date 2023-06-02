@@ -205,7 +205,7 @@ export default function AddLocation({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground 
-                source={backgroundImage}
+                source={defaultBackground}
                 style={styles.backgroundImage}
                 resizeMode="cover"
             >
